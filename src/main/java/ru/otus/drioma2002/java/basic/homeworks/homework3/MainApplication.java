@@ -48,35 +48,26 @@ public class MainApplication {
 
     // Задание 2
     public static void printSquare(int size) {
-        char[][] arr = new char[size][size];
-        int c = 0;
 
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                if ( i == 0 || i == arr.length-1 || j == 0 || j == arr[i].length-1) {
-                    arr[i][j] = '*';
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if ( i == 0 || i == size-1 || j == 0 || j == size-1) {
+                    System.out.print("* ");
                 } else {
-                    arr[i][j] = ' ';
+                    System.out.print("  ");
                 }
-            }
-        }
-
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                System.out.print(arr[i][j] + " ");
             }
             System.out.println();
         }
+
     }
 
     // Задание 3
     public static void diagonalNulling(int [][] arr) {
 
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
                 arr[i][i] = 0;
                 arr[i][arr.length-1 - i] = 0;
-            }
         }
 
     }
