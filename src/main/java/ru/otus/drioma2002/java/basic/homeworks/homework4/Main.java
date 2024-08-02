@@ -22,7 +22,7 @@ public class Main {
         int currentYear = Year.now().getValue();
 
         for (int i = 0; i < users.length; i++) {
-            if ( currentYear - users[i].getBirth_year() > 40 ) {
+            if ( currentYear - users[i].getBirthYear() > 40 ) {
                 users[i].printInfo();
             }
         }

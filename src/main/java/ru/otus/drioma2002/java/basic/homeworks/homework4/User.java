@@ -4,21 +4,21 @@ public class User {
     private String surname;
     private String name;
     private String patronymic;
-    private int birth_year;
+    private int birthYear;
     private String email;
 
     // Конструктор:
-    public User (String surname, String name, String patronymic, int birth_year, String email) {
+    public User (String surname, String name, String patronymic, int birthYear, String email) {
         this.surname = surname;
         this.name = name;
         this.patronymic = patronymic;
-        this.birth_year = birth_year;
+        this.birthYear = birthYear;
         this.email = email;
     }
 
     public void printInfo () {
         System.out.println("ФИО: " + surname + " " + name + " " + patronymic);
-        System.out.println("Год рождения: " + birth_year);
+        System.out.println("Год рождения: " + birthYear);
         System.out.println("e-mail: " + email);
         System.out.println();
     }
@@ -35,8 +35,8 @@ public class User {
         this.patronymic = patronymic;
     }
 
-    public void setBirth_year(int birth_year) {
-        this.birth_year = birth_year;
+    public void setBirthYear(int birthYear) {
+        this.birthYear = birthYear;
     }
 
     public void setEmail(String email) {
@@ -55,8 +55,8 @@ public class User {
         return patronymic;
     }
 
-    public int getBirth_year() {
-        return birth_year;
+    public int getBirthYear() {
+        return birthYear;
     }
 
     public String getEmail() {

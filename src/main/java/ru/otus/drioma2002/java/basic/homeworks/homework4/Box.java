@@ -62,6 +62,7 @@ public class Box {
         }
 
         content = item;
+        System.out.println("В коробку положили " + content);
     }
 
     public void eject () {
@@ -75,6 +76,7 @@ public class Box {
             return;
         }
         content = null;
+        System.out.println("Коробку вытряхнули. Коробка пустая.");
     }
 
     public void setColor(String color) {
