@@ -1,10 +1,10 @@
 package ru.otus.drioma2002.java.basic.homeworks.homework5;
 
 public class Animal {
-    private String name;
-    private float runSpeed;     // (м/с)
-    private float swimSpeed;    // (м/с)
-    private float endurance;    // у.е.
+    protected String name;
+    protected float runSpeed;     // (м/с)
+    protected float swimSpeed;    // (м/с)
+    protected float endurance;    // у.е.
 
     public Animal(String name, float runSpeed, float swimSpeed, float endurance) {
         this.name = name;
@@ -15,6 +15,9 @@ public class Animal {
 
     // все животные на 1 метр бега тратят 1 ед. выносливости
     public float run (int distance) {
+
+        System.out.println(name + " пытается пробежать " + distance + " м.");
+
         float time;
         if (endurance - distance < 0) {
             System.out.println(name + " - Устал");
@@ -36,37 +39,5 @@ public class Animal {
         System.out.println("Скорость плавания: " + swimSpeed);
         System.out.println("Выносливость: " + endurance);
         System.out.println();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public float getRunSpeed() {
-        return runSpeed;
-    }
-
-    public float getSwimSpeed() {
-        return swimSpeed;
-    }
-
-    public float getEndurance() {
-        return endurance;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setRunSpeed(float runSpeed) {
-        this.runSpeed = runSpeed;
-    }
-
-    public void setSwimSpeed(float swimSpeed) {
-        this.swimSpeed = swimSpeed;
-    }
-
-    public void setEndurance(float endurance) {
-        this.endurance = endurance;
     }
 }

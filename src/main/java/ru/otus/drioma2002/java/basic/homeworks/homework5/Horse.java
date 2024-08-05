@@ -7,19 +7,22 @@ public class Horse extends Animal {
 
     public float swim (int distance) {
         float time;
+
+        System.out.println(name + " пытается проплыть " + distance + " м.");
+
         // Лошади на 1 метр плавания тратят 4 ед. выносливости
         int distanceReal = distance;
         distance *= 4;
 
-        if (super.getEndurance() - distance < 0) {
-            System.out.println(super.getName() + " - Устал");
+        if (endurance - distance < 0) {
+            System.out.println(name + " - Устал");
             return -1;
         }
-        super.setEndurance(super.getEndurance() - distance);
+        endurance -= distance;
 
-        time = distance / super.getRunSpeed();
+        time = distance / runSpeed;
 
-        System.out.println(super.getName() + " проплыл " + distanceReal + " м. за " + time + " сек.");
+        System.out.println(name + " проплыл " + distanceReal + " м. за " + time + " сек.");
 
         return time;
     }

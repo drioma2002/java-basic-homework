@@ -7,19 +7,22 @@ public class Dog extends Animal{
 
     public float swim (int distance) {
         float time;
+
+        System.out.println(name + " пытается проплыть " + distance + " м.");
+
         // Собаки на 1 метр плавания тратят 2 ед. выносливости
         int distanceReal = distance;
         distance *= 2;
 
-        if (super.getEndurance() - distance < 0) {
-            System.out.println(super.getName() + " - Устал");
+        if (endurance - distance < 0) {
+            System.out.println(name + " - Устал");
             return -1;
         }
-        super.setEndurance(super.getEndurance() - distance);
+        endurance -= distance;
 
-        time = distance / super.getRunSpeed();
+        time = distance / runSpeed;
 
-        System.out.println(super.getName() + " проплыл " + distanceReal + " м. за " + time + " сек.");
+        System.out.println(name + " проплыл " + distanceReal + " м. за " + time + " сек.");
 
         return time;
     }
