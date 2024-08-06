@@ -1,6 +1,10 @@
 package ru.otus.drioma2002.java.basic.homeworks.homework5;
 
-public class homework5 {
+import ru.otus.drioma2002.java.basic.homeworks.homework5.animals.Cat;
+import ru.otus.drioma2002.java.basic.homeworks.homework5.animals.Dog;
+import ru.otus.drioma2002.java.basic.homeworks.homework5.animals.Horse;
+
+public class Homework5 {
     public static void main(String[] args) {
         float time;         //секунды
 
