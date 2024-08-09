@@ -11,6 +11,10 @@ public class Cat {
     }
 
     public void eat(Plate plate) {
+        if (satiety) {
+            System.out.println("Кот " + name + " сыт");
+            return;
+        }
 
         System.out.println("Кот " + name + " кушает");
 
