@@ -18,12 +18,12 @@ public class Cat {
 
         System.out.println("Кот " + name + " кушает");
 
-        if ( plate.decrease(appetite) ) {
-            System.out.println(name + " - наелся");
+        if (plate.decrease(appetite)) {
             satiety = true;
+            System.out.println(name + " - наелся");
         } else {
-            System.out.println(name + " - голоден");
             satiety = false;
+            System.out.println(name + " - голоден");
         }
 
     }
