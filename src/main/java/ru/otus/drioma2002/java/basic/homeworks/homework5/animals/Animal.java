@@ -38,6 +38,11 @@ public class Animal {
 
         System.out.println(name + " пытается проплыть " + distance + " м.");
 
+        if (swimSpeed == 0) {
+            System.out.println("Животное не умеет плавать");
+            return -1;
+        }
+
         // Собаки на 1 метр плавания тратят 2 ед. выносливости
         int distanceReal = distance;
         distance *= energyRate;
