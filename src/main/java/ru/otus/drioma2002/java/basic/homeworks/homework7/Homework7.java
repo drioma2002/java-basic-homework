@@ -3,13 +3,16 @@ package ru.otus.drioma2002.java.basic.homeworks.homework7;
 public class Homework7 {
     public static void main(String[] args) {
 
-        Human human = new Human("Вася", 100);
+        Human human = new Human("Василий", 100);
         human.getOut();
+
+        System.out.println();
 
         human.printInfo();
         Car car = new Car(100);
         car.printInfo();
         human.getIn(car);
+        human.move(Terrain.FOREST, 10); // Местность, по которой машина не может ехать
         human.move(Terrain.PLAIN, 10);
         human.getOut();
         car.printInfo();

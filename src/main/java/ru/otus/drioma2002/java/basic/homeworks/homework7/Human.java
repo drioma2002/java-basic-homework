@@ -2,7 +2,7 @@ package ru.otus.drioma2002.java.basic.homeworks.homework7;
 
 public class Human implements Moveable {
     private String name;
-    private int power; // сила человека
+    private int power;
     private Vehicle currentTransport;
 
     public Human(String name, int power) {
@@ -13,7 +13,7 @@ public class Human implements Moveable {
 
     public void getIn (Vehicle vehicle) {
         if (isOnVehicle()) {
-            System.out.println(name + " уже находится на " + vehicle.getType());
+            System.out.println(name + " уже находится на " + currentTransport.getType());
             return;
         }
         currentTransport = vehicle;

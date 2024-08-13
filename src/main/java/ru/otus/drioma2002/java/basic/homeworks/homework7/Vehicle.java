@@ -29,13 +29,13 @@ public abstract class Vehicle implements Moveable {
             if (t == terrain) {
                 if (power < distance * powerСonsumption) {
                     power = 0;
-                    System.out.println(type + " недостаточно топлава/энергии");
+                    System.out.println(type + " недостаточно топлава/энергии для расстояния " + distance);
                     renewHumanPower();
                     return false;
                 }
 
                 power -= distance * powerСonsumption;
-                System.out.println(type + " проехала расстояние " + distance + " коэф. потребления топлива/энергии " + powerСonsumption);
+                System.out.println(type + " проехала по " + terrain + " расстояние " + distance + " коэф. потребления топлива/энергии " + powerСonsumption);
                 renewHumanPower();
                 return true;
             }
