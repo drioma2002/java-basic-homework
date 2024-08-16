@@ -31,11 +31,7 @@ public class Human implements Moveable {
     }
 
     private boolean isOnVehicle () {
-        if (currentTransport == null) {
-            return false;
-        } else {
-            return true;
-        }
+        return currentTransport != null;
     }
 
     @Override

@@ -5,7 +5,7 @@ public abstract class Vehicle implements Moveable {
     int power;
     int powerСonsumption;
     Terrain[] allowableTerrain;
-    Human human;
+    Human driver;
 
     public Vehicle(String type, int power, int powerСonsumption, Terrain[] allowableTerrain) {
         this.type = type;
@@ -20,7 +20,7 @@ public abstract class Vehicle implements Moveable {
         this.powerСonsumption = powerСonsumption;
         this.allowableTerrain = allowableTerrain;
 
-        this.human = human;
+        this.driver = human;
     }
 
     @Override
@@ -54,8 +54,8 @@ public abstract class Vehicle implements Moveable {
     }
 
     private void renewHumanPower(){
-        if (human != null) {
-            human.setPower(power);
+        if (driver != null) {
+            driver.setPower(power);
         }
     }
 }
