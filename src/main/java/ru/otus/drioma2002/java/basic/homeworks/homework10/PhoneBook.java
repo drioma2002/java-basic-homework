@@ -3,8 +3,8 @@ package ru.otus.drioma2002.java.basic.homeworks.homework10;
 import java.util.*;
 
 public class PhoneBook {
-    Map<String, List<String>> map = new HashMap<>();
-    Set<String> set = new HashSet<>();
+    private Map<String, List<String>> map = new HashMap<>();
+    private Set<String> set = new HashSet<>();
 
     public void add (String name, String phone) {
         if(!map.containsKey(name)) {
