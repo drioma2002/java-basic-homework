@@ -24,7 +24,7 @@ public class Homework9 {
         System.out.println("Задание 3");
         list.clear();
 
-        list.add(5); list.add(4); list.add(3); list.add(2); list.add(1);
+        list.add(5); list.add(4); list.add(3); list.add(2); list.add(1); list.add(1, null);
 
         System.out.println(list);
         System.out.println(replaceListVal(7, list));
@@ -103,7 +103,9 @@ public class Homework9 {
     // Задание 3
     public static ArrayList<Integer> replaceListVal (Integer val, ArrayList<Integer> list) {
         for (int i = 0; i < list.size(); i++) {
-            list.set(i, val);
+            if (list.get(i) != null) {
+                list.set(i, val);
+            }
         }
         return list;
     }
