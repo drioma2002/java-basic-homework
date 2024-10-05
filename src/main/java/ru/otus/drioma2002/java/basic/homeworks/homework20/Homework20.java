@@ -14,19 +14,20 @@ public class Homework20 {
             System.out.println("Введите текст для поиска:");
             String textToSearch = scanner.nextLine();
 
-            if (textToSearch == null) {
+            if (textToSearch == null || textToSearch.isEmpty()) {
                 System.out.println("Текст для поиска не может быть пустой");
                 return;
             }
 
             try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName, StandardCharsets.UTF_8))) {
 
-                System.out.println("Фраза '" + textToSearch + "' встречается в '" + fileName + "' " + countTextMatches(bufferedReader, textToSearch) + " раз(а).");
+                int matchCount = countTextMatches(bufferedReader, textToSearch);
+                System.out.println("Фраза '" + textToSearch + "' встречается в файле '" + fileName + "' " + matchCount + " раз(а).");
 
             } catch (FileNotFoundException e) {
-                System.out.println("Файл не найден");
+                System.out.println("Файл '" + fileName + "' не найден");
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                System.out.println("Произошла ошибка при чтении файла: " + e.getMessage());
             }
         }
     }
@@ -36,15 +37,23 @@ public class Homework20 {
         int matchesCount = 0;
 
         while ((fileLine = bufferedReader.readLine()) != null) {
-            //System.out.println(fileLine);
-            if (fileLine.contains(textToSearch)) {
+// мой вариант:
+//            if (fileLine.contains(textToSearch)) {
+//
+//                while (fileLine.contains(textToSearch)) {
+//                    int position = fileLine.indexOf(textToSearch);
+//                    fileLine = fileLine.substring(position + textToSearch.length());
+//                    matchesCount ++;
+//                }
+//            }
 
-                while (fileLine.contains(textToSearch)) {
-                    int position = fileLine.indexOf(textToSearch);
-                    fileLine = fileLine.substring(position + textToSearch.length());
-                    matchesCount ++;
-                }
+            // исправленный вариант:
+            int position = 0;
+            while ((position = fileLine.indexOf(textToSearch, position)) != -1) {
+                matchesCount++;
+                position += textToSearch.length();
             }
+
         }
 
         return matchesCount;
