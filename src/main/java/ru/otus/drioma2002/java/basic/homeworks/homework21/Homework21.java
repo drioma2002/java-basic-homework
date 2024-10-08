@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 
 public class Homework21 {
     private final Object mon = new Object();
-    private char currentLetter = 'A';
+    private volatile char currentLetter = 'A';
 
     public static void main(String[] args) {
         Homework21 homework21 = new Homework21();
